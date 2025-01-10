@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "Commit",
+    "description": "Commit Summary Extension",
+    "version": "1.0",
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": "images/default_icon.png"
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "scripts/content.js"
+            ],
+            "matches": [
+                "https://www.youtube.com/watch*"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "/scripts/inject.js"
+            ],
+            "matches": [
+                "https://www.youtube.com/*"
+            ]
+        }
+    ]
+}
