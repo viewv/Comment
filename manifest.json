@@ -1,29 +1,26 @@
 {
     "manifest_version": 3,
-    "name": "Commit",
-    "description": "Commit Summary Extension",
+    "name": "YouTube Comments Extractor",
     "version": "1.0",
+    "description": "Extract comments from YouTube videos",
+    "permissions": [
+        "activeTab",
+        "storage"
+    ],
+    "host_permissions": [
+        "https://www.youtube.com/*",
+        "https://generativelanguage.googleapis.com/*"
+    ],
     "action": {
-        "default_popup": "index.html",
-        "default_icon": "images/default_icon.png"
+        "default_popup": "popup.html"
     },
     "content_scripts": [
         {
-            "js": [
-                "scripts/content.js"
-            ],
-            "matches": [
-                "https://www.youtube.com/watch*"
-            ]
-        }
-    ],
-    "web_accessible_resources": [
-        {
-            "resources": [
-                "/scripts/inject.js"
-            ],
             "matches": [
                 "https://www.youtube.com/*"
+            ],
+            "js": [
+                "content.js"
             ]
         }
     ]
